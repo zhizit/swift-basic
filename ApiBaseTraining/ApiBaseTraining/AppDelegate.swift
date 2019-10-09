@@ -12,13 +12,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var titleText: String = ""
     // Viewに表示する詳細テキストです
     var detailText: String = ""
-    // アプリを閉じるボタンを利用するかの判定です
-    var isEnableAppCloseBtn: Bool = true
+    // 検索ボタンを利用するかの判定です
+    var isEnablesearchBtn: Bool = true
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let host = Bundle.main.object(forInfoDictionaryKey: "customHost") as! String
-        print(host)
-        setMessages(title: "タイトル", detail: "")
+        setMessages(title: "住所検索", detail: nil)
         return true
     }
 

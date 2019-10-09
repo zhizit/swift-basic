@@ -25,3 +25,8 @@
     - 「Manage Schemes ...」を選択
     - 「＋」ボタンを押下すると TARGET を指定できるので、環境分だけ　Schemes を作成する
     - 後は確認したいSchemeを選択すれば環境が切り替わります
+
+## http:// を許可したい場合
+
+  - Info.plst > Information Property Listの下に自分で設定をつくる
+  - App Transport Security Settings > Exception Domains > [http://配下のドメイン名]でTypeをDictionary > NSTemporaryExceptionAllowsInsecureHTTPLoads Boolean YES

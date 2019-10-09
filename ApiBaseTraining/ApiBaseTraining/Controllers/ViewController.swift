@@ -13,26 +13,30 @@ class ViewController: UIViewController {
     /// レイアウトを設定します
     public func loadLayout() -> Void {
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appCloseBtn.alpha = appDelegate.isEnableAppCloseBtn ? 1 : 0 // 0: 非表示、1: 表示
+        searchBtn.alpha = appDelegate.isEnablesearchBtn ? 1 : 0 // 0: 非表示、1: 表示
         titleLabel.text = appDelegate.titleText
         detailLabel.text = appDelegate.detailText
-        view.addSubview(appCloseBtn)
+        view.addSubview(searchBtn)
         view.addSubview(titleLabel)
         view.addSubview(detailLabel)
         view.backgroundColor = UIColor.white
     }
 
-    /// ボタンを押下したらアプリを閉じます
-    @objc func exitApplication(_ sender: UIButton) {
-        exit(0)
+    /// 検索結果を表示
+    @objc func searchDisney(_ sender: UIButton) {
+        let result = ApiSampleService.searchDisneylandAddress(postCode: "279-0031")
+        searchBtn.alpha = 0
+        titleLabel.text = "検索結果"
+        detailLabel.text = "\(result)"
+        print(result as Any)
     }
 
     // MARK: UI components
 
-    private lazy var appCloseBtn: UIButton = {
+    private lazy var searchBtn: UIButton = {
         let button = UIButton()
-        button.addTarget(self, action: #selector(self.exitApplication(_:)), for: .touchUpInside)
-        button.setTitle("アプリを閉じる", for: .normal)
+        button.addTarget(self, action: #selector(self.searchDisney(_:)), for: .touchUpInside)
+        button.setTitle("ディズニーの住所を表示する", for: .normal)
         button.backgroundColor = UIColor.darkGray
         button.frame = CGRect(x: 0, y: 0, width: 250, height: 40)
         button.center = CGPoint(x: view.frame.size.width / 2, y: view.frame.size.height / 2)
