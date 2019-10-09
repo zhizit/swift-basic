@@ -25,9 +25,7 @@
 		8D3B7747234C8615001B9F28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D3B774C234C8615001B9F28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D3B775F234C8D15001B9F28 /* STG_ApiBaseTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STG_ApiBaseTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D3B7760234C8D15001B9F28 /* DEV_ApiBaseTraining copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DEV_ApiBaseTraining copy-Info.plist"; path = "/Users/tomoko.sonoyama/dev/swift-basic/ApiBaseTraining/DEV_ApiBaseTraining copy-Info.plist"; sourceTree = "<absolute>"; };
 		8D3B776B234C8D31001B9F28 /* PRO_ApiBaseTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PRO_ApiBaseTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D3B776C234C8D31001B9F28 /* STG_ApiBaseTraining copy copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "STG_ApiBaseTraining copy copy-Info.plist"; path = "/Users/tomoko.sonoyama/dev/swift-basic/ApiBaseTraining/STG_ApiBaseTraining copy copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +58,6 @@
 			children = (
 				8D3B773D234C8613001B9F28 /* ApiBaseTraining */,
 				8D3B773C234C8613001B9F28 /* Products */,
-				8D3B7760234C8D15001B9F28 /* DEV_ApiBaseTraining copy-Info.plist */,
-				8D3B776C234C8D31001B9F28 /* STG_ApiBaseTraining copy copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};

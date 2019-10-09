@@ -1,3 +1,7 @@
+## プロジェクトを git 管理するとき
+
+- .gitignoreファイルに ```UserInterfaceState.xcuserstate```と記載する。UserInterfaceStateはXcodeを触るたびに不要な差分を出しているためGit管理不要
+
 ## storyboard を使わない実装
 
 - 以下のファイルと設定を削除
