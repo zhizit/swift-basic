@@ -1,7 +1,7 @@
 # iOSプッシュ通知の実装手順
 
 - Swift version 5.1
-- FCM（Firebase Cloud Messaging）
+- Firebase Notification
 
 ## Swift
 
