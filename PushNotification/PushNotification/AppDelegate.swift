@@ -19,6 +19,8 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
+//        これで値を受け取ることができる
+//        let result = userInfo["hoge"] as! String)
         completionHandler()
     }
 }
@@ -52,5 +54,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
+  
+// サーバーサイドからプッシュ通知を送る場合、InstanceIDを連携する必要があります
+//    // APNsへプッシュ通知の利用の登録が完了すると呼び出される関数です
+//    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+//        InstanceID.instanceID().instanceID { (result, error) in
+//            if let error = error {
+//                NSLog("ERROR")
+//            } else if let result = result {
+//                let response = sendTokenToServer(token: result.token)// 省略
+//                if response == nil {
+//                    return
+//                }
+//                let statusCode = response?["statusCode"] ?? 0
+//                if statusCode as! Int == 200 {
+//                    NSLog("SUCCESS")
+//                } else {
+//                   NSLog("ERROR")
+//                }
+//            }
+//        }
+//    }
     
+//    // APNsへプッシュ通知の利用の登録が失敗すると呼び出される関数です
+//    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+//         NSLog("ERROR")
+//    }
 }
