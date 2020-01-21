@@ -59,11 +59,13 @@ class HttpClient {
     /// - Returns: レスポンスボディ
     private static func runHTTPMethod(requestBody: [String: Any]?, url: URL, method: HTTPMethod, contentType: ContentType) -> Any {
         let request = createRequest(requestBody: requestBody, url: url, method: method, contentType: contentType)
+        let condition = NSCondition()
 
         // HTTPメソッドを実行する
         var responseBody: Any! = nil
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             do {
+                condition.lock()
                 // レスポンスボディをJSONからデシリアライズして返す
                 responseBody = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
                 print(responseBody)
@@ -71,12 +73,16 @@ class HttpClient {
                 print(error.localizedDescription)
                 fatalError()
             }
+                                                              
+            // 共有リソースの解放
+            condition.signal()
+            condition.unlock()
         }
-        task.resume()
 
-        // レスポンスを待つ
-        while responseBody == nil {
-        }
+        condition.lock()
+        task.resume()
+        condition.wait()
+        condition.unlock()
 
         return responseBody!
     }
@@ -134,4 +140,3 @@ class HttpClient {
         return queries
     }
 }
-
